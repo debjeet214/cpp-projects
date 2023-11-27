@@ -117,14 +117,14 @@ int main()
             system("cls");
             cout << "enter the account number : ";
             cin >> num;
-            void money_deposit_withdrawl(num, 1);
+            money_deposit_withdrawl(num, 1);
             break;
 
         case '3': // withdraw function
             system("cls");
             cout << "\t Enter the account number : ";
             cin >> num;
-            void money_deposit_withdrawl(num, 2);
+            money_deposit_withdrawl(num, 2);
             break;
 
         case '4': // balance enquiry function
@@ -266,7 +266,7 @@ void money_deposit_withdrawl(int n, int option)
         cout << "file could not be opened || press other key";
         return;
     }
-    while (!file.eof && found == false)
+    while (!file.eof() && found == false)
     {
         file.read(reinterpret_cast<char *>(&ac), sizeof(bank_account));
         if (ac.retacno() == n)
@@ -317,7 +317,7 @@ void update_account(int n)
         cout << "file could not be opened || press other key";
         return;
     }
-    while (!file.eof && found == false)
+    while (!file.eof() && found == false)
     {
         file.read(reinterpret_cast<char *>(&ac), sizeof(bank_account));
         if (ac.retacno() == n)
